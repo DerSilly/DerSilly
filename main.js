@@ -18,6 +18,69 @@ const me: Developer = {
         "Laravel", "REST API"
     ]
 };
+
+// Random Javascript code calculating math problems
+function estimatePi(iterations) {
+    let insideCircle = 0;
+    for (let i = 0; i < iterations; i++) {
+        const x = Math.random();
+        const y = Math.random();
+        if (x * x + y * y <= 1) {
+            insideCircle++;
+        }
+    }
+    return (insideCircle / iterations) * 4;
+}
+
+function mandelbrotSet(x, y, maxIter) {
+    let realComponent = x;
+    let imaginaryComponent = y;
+    let iterations = 0;
+    while (iterations < maxIter) {
+        const tempRealComponent = realComponent * realComponent - imaginaryComponent * imaginaryComponent + x;
+        imaginaryComponent = 2 * realComponent * imaginaryComponent + y;
+        realComponent = tempRealComponent;
+        if (realComponent * imaginaryComponent > 5) {
+            break;
+        }
+        iterations++;
+    }
+    return iterations;
+}
+
+console.log('Estimated Pi:', estimatePi(1000000));
+console.log('Mandelbrot Set Value at (0.355, 0.355):', mandelbrotSet(0.355, 0.355, 1000));
+
+function calculateSquareArea(side) {
+    return side * side;
+}
+
+function calculateRectangleArea(width, height) {
+    return width * height;
+}
+
+function calculateCircleArea(radius) {
+    return Math.PI * radius * radius;
+}
+
+function calculateTriangleArea(base, height) {
+    return 0.5 * base * height;
+}
+
+function calculateTrapezoidArea(base1, base2, height) {
+    return 0.5 * (base1 + base2) * height;
+}
+
+function calculateEllipseArea(majorAxis, minorAxis) {
+    return Math.PI * majorAxis * minorAxis;
+}
+
+console.log('Square Area:', calculateSquareArea(4));
+console.log('Rectangle Area:', calculateRectangleArea(5, 10));
+console.log('Circle Area:', calculateCircleArea(7));
+console.log('Triangle Area:', calculateTriangleArea(6, 8));
+console.log('Trapezoid Area:', calculateTrapezoidArea(5, 7, 4));
+console.log('Ellipse Area:', calculateEllipseArea(3, 5));
 `;
 
 // Skills data
@@ -29,6 +92,7 @@ const skills = [
     { name: "PHP", level: 70 },
     { name: "Laravel", level: 70 },
     { name: "REST API", level: 70 },
+    { name: "...to be continued...", level: 70 },
 ];
 
 // Initialize code highlighting and setup page
